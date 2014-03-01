@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="api">
+      <UniqueIdentifier>{79abfad5-f0ae-4429-a80c-c18ddd80cc42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="driver">
+      <UniqueIdentifier>{860fb8e1-58b9-470e-bdce-c4e894b07b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{3b8520d8-314e-428c-8a67-cd9d13e0bdc5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DbDriver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CodingConv.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SqlDataBase.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="SqlQuery.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="AdoDriver.cpp">
+      <Filter>driver</Filter>
+    </ClCompile>
+    <ClCompile Include="PgDriver.cpp">
+      <Filter>driver</Filter>
+    </ClCompile>
+    <ClCompile Include="SqliteDriver.cpp">
+      <Filter>driver</Filter>
+    </ClCompile>
+    <ClCompile Include="SqlDriver.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="SqlRecordset.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="OciDriver.cpp">
+      <Filter>driver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DbDriver.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="res\DbDriver.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CodingConv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DbDriver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SqlDataBase.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="SqlDef.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="AdoDriver.h">
+      <Filter>driver</Filter>
+    </ClInclude>
+    <ClInclude Include="PgDriver.h">
+      <Filter>driver</Filter>
+    </ClInclude>
+    <ClInclude Include="SqliteDriver.h">
+      <Filter>driver</Filter>
+    </ClInclude>
+    <ClInclude Include="SqlDriver.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="SqlRecordset.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="OciDriver.h">
+      <Filter>driver</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DbDriver.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
