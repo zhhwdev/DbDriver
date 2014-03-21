@@ -124,7 +124,7 @@ public:
 	bool RollbackTransaction();
 
 	int ExecuteSql(const char *szSql);
-	int ExecBinary(const char* strSql, byte** pParas,int *len, short nParamsNum);
+	int ExecBinary(const char* strSql, char** pParas,int *len, short nParamsNum);
 	bool PutBlob(const char *strWhereSql, const char *szTableName, const char* szFldName, byte*szVal, long len);
 	//Protocol protocol() const;
 	CSqlRecordset *createResult() const;

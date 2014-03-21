@@ -53,10 +53,8 @@ _RecordsetPtr CAdoSQLDriverPrivate::exec(const char * stmt) const
 	}
 	catch (_com_error &e)
 	{
-		throw e;
+		return NULL;
 	}
-
-	return pRecord;
 }
 
 
@@ -191,7 +189,8 @@ int CAdoSQLResult::size()
 }
 int CAdoSQLResult::SelectRowCount()
 {
-	ASSERT(d->result!=NULL);
+	if (d->result==NULL)
+		return -1;
 
 	int nRows = d->result->GetRecordCount();
 	if(nRows == -1)
@@ -782,6 +781,7 @@ bool CAdoSQLResult::GetValue(char* strFieldName, string& strValue, bool &nIsNull
 	}
 	char *temp=_com_util::ConvertBSTRToString(vt.bstrVal);
 	strValue=temp;
+	delete[]   temp;   
 	return rtn;
 }
 
@@ -1120,7 +1120,7 @@ int  CAdoSQLDriver::ExecuteSql(const char* strSql)
 	return 1;
 }
 
-int CAdoSQLDriver::ExecBinary(const char* strSql, byte** pParas,int *len, short nParamsNum)
+int CAdoSQLDriver::ExecBinary(const char* strSql, char** pParas,int *len, short nParamsNum)
 {
 	// 插入二进制需要根据数据集
 	return 0;
@@ -1166,7 +1166,7 @@ bool CAdoSQLDriver::PutBlob(const char *szWhereSql, const char *szTableName, con
 		pRecordset.Release();
 	}
 	catch (_com_error &e)
-	{	
+	{
 		m_strError = string(e.ErrorMessage());
 		OutputDebugString(e.ErrorMessage());
 		return FALSE;

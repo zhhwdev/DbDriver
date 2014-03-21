@@ -144,13 +144,13 @@ public:
 
 	//非查询语句
 	int ExecuteSql(const char* strSql);
-	int ExecBinary(const char* strSql, byte** pParas,int *len, short nParamsNum);
+	int ExecBinary(const char* strSql, char** pParas,int *len, short nParamsNum);
 
 	bool PutBlob(const char *strWhereSql, const char *szTableName, const char* szFldName, byte*szVal, long len)
 	{
 		return false;
 	}
-	// 不一定对外
+
 	int ExecuteSql(char**& strSql, long len, long lOptions);
 
 	CSqlRecordset *createResult() const;

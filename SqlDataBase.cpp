@@ -299,7 +299,7 @@ int CSqlDataBase::ExecuteSql(char** &strSql, long len)
 	return 1;
 }
 
-int CSqlDataBase::ExecBinary(const char* strSql, byte** pParas,int *len, int nParamsNum)
+int CSqlDataBase::ExecBinary(const char* strSql, char** pParas,int *len, int nParamsNum)
 {
 	if (!d->driver || !d->driver->IsOpen())
 		return -1;

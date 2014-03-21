@@ -1520,21 +1520,52 @@ int CPgSQLDriver::ExecuteSql(const char *szSql)
 
 	PGresult *pRes = PQexec(pg_d->connection, szSql);
 	if (!pRes)
-		return false;
+		return 0;
 
 	int status = PQresultStatus(pRes);
 	if (status == PGRES_COMMAND_OK) 
-		return true;
+		return 1;
 	else
 	{
 		m_strError = PQerrorMessage(pg_d->connection);
 		TRACE("CPgSQLDriver::ExecuteSql error:%s", m_strError.c_str());
 	}
 
-	return false;
+	return 0;
 }
 
-int CPgSQLDriver::ExecBinary(const char *szSql, byte **szBinVal, int *lLen, short nNum)
+int CPgSQLDriver::ExecBinary(const char *szSql, char **szBinVal, int *lLen, short nNum)
 {
-	return 1;
+	const char** paramValues		 =	NULL;
+	int * paramFormate		 = NULL;
+
+	paramFormate = new int[nNum];
+	for (int i=0; i<nNum; i++)
+	{
+		paramFormate[i] = 1;
+	}
+
+	PGresult *pRes = PQexecParams(
+		pg_d->connection,
+		szSql,
+		nNum,
+		NULL,				/* Types of parameters, unused as casts will define types */
+		szBinVal,
+		lLen,
+		paramFormate,
+		0);
+
+	if (!pRes)
+		return 0;
+
+	int status = PQresultStatus(pRes);
+	if (status == PGRES_COMMAND_OK) 
+		return 1;
+	else
+	{
+		m_strError = PQerrorMessage(pg_d->connection);
+		TRACE("CPgSQLDriver::ExecuteSql error:%s", m_strError.c_str());
+	}
+
+	return 0;
 }

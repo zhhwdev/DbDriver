@@ -135,7 +135,7 @@ public:
 	int ExecuteSql(const char *szSql);
 
 	// 执行带二进制数据操作
-	int ExecBinary(const char *szSql, byte **szBinVal, int *lLen, short nNum);
+	int ExecBinary(const char *szSql, char **szBinVal, int *lLen, short nNum);
 
 	Protocol protocol() const;
 	CSqlRecordset *createResult() const;

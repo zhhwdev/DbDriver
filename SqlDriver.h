@@ -39,7 +39,7 @@ public:
 	bool isOpenError() const;
 
 	virtual int ExecuteSql(const char *szSql) = 0;
-	virtual int ExecBinary(const char* strSql, byte** pParas,int *len, short nParamsNum) = 0;
+	virtual int ExecBinary(const char* strSql, char** pParas,int *len, short nParamsNum) = 0;
 
 	virtual bool BeginTransaction()				= 0;
 	virtual bool CommitTransaction()			= 0;

@@ -838,7 +838,7 @@ abort:
 	return 0;
 }
 
-int CSqliteSQLDriver::ExecBinary(const char* strSql, byte** pParas,int *len, short nParamsNum)
+int CSqliteSQLDriver::ExecBinary(const char* strSql, char** pParas,int *len, short nParamsNum)
 {
 	ASSERT( d->access != NULL);
 	ASSERT(strSql != NULL);
